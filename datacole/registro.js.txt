@@ -1,0 +1,56 @@
+const url = "http://localhost:3874/api/consultas/";
+let resultados = '';
+const formArticulo = document.querySelector("form");
+const nombres = document.getElementById("NOMBRES");
+const apellidos = document.getElementById("APELLIDOS");
+const dni = document.getElementById("DNI");
+const correoelectronico = document.getElementById("CORREOELECTRONICO");
+const celular = document.getElementById("CELULAR");
+const mensaje = document.getElementById("MENSAJE");
+var opcion = '';
+
+btnCrear.addEventListener('click', () => {
+    console.log("Acción de listar activada");
+    opcion = 'crear';
+});
+
+formArticulo.addEventListener('submit',
+    (e) => {
+   	 e.preventDefault();
+   	 if (opcion == 'crear') {
+        if (NOMBRES.value == "" || APELLIDOS.value == "" || DNI.value == "" || CORREOELECTRONICO.value == "" || CELULAR.value == "" || MENSAJE.value == "" ) {
+            alert("Asegúrese de que todos los campos estén completos");
+            return false;
+        } else {
+            console.log("Todos los campos están completos");
+            fetch(
+                url,
+                {
+                    method: 'POST',
+                    headers: {
+                        'content-Type':'application/json'
+                    },
+                    body: JSON.stringify(
+                        {
+                            NOMBRES: NOMBRES.value,
+                            APELLIDOS: APELLIDOS.value,
+                            DNI: DNI.value,
+                            CORREOELECTRONICO: CORREOELECTRONICO.value,
+                            CELULAR: CELULAR.value,
+                            MENSAJE: MENSAJE.value
+                        }
+                    )
+                }
+            )
+            .then(
+                response => response.json()
+            )
+            .then(
+                response => location.reload()
+            );
+        }
+    } else if(opcion == 'editar'){
+        console.log("Activado el ");
+    }
+}
+);
