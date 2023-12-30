@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background: #0dff00;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient( to right, #ff0000, #2bff00);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient( to right, #ff0059, #f703ff);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+    width: 600px;
+    position: relative;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo_img {
+    width: 250px;
+}
+
+.form {
+    padding: 10px;
+}
+
+.form__usuario,
+.form__clave {
+    width: 100%;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.usuario,
+.clave {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-bottom: solid #222 2px;
+}
+
+.ver_clave {
+    position: absolute;
+    right: 10px;
+    bottom: 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.boton {
+    background: rgb(255, 0, 204);
+    padding: 15px 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.form__boton {
+    display: flex;
+    justify-content: center;
+}
+
+.boton:hover {
+    background: rgb(0, 8, 255);
+}
